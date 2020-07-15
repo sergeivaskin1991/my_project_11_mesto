@@ -1,0 +1,19 @@
+.content {
+
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+ 
+}
+
+.images.image_is-opened {
+    display: flex;
+}
+
+.image-close {
+    width: 26px;
+    position: absolute;
+    top: -26px;
+    right: -26px;
+    cursor: pointer;
+}
