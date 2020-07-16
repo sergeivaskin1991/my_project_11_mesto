@@ -1,4 +1,4 @@
-class Card {
+export class Card {
 	constructor(url, name, imageOpen) {
 	  this._url = url;
 	  this._name = name;

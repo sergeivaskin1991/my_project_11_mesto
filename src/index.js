@@ -1,3 +1,15 @@
+
+
+import {Api} from "./js/Api.js";
+import {Card} from "./js/Card.js";
+import {CardList} from "./js/CardList.js";
+import {FormValidator} from "./js/FormValidator.js";
+import {Popup} from "./js/Popup.js";
+import {AddCardPopup} from "./js/AddCardPopup.js";
+import {UserInfo} from "./js/UserInfo.js";
+
+import './pages/index.css';
+
 (function () {
 
 
@@ -52,7 +64,17 @@
   const formValidEdit = new FormValidator(formUser, errorMessages);
   const userInfo = new UserInfo();
 
-  const api = new Api(config);
+  const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk' : 'http://praktikum.tk';
+
+  const apiData = {
+    baseUrl: `${API_URL}/cohort11`,
+    headers: {
+      authorization: 'e68fb6ad-453f-4883-819e-2174dfda84ad',
+      'Content-Type': 'application/json'
+    }
+  }
+
+  const api = new Api(config, apiData);
   const cardsArray = [];
 
   api.getUser()
