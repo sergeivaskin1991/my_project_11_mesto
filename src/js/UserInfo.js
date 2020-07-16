@@ -1,4 +1,4 @@
-class UserInfo {
+export class UserInfo {
 
   setUserInfo = ({ user, about, avatar }) => {
     this._user = user;
