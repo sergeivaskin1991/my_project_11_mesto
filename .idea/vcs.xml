@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/node_modules/.cache/gh-pages/github.com!sergeivaskin1991!my_project_11_mesto.git" vcs="Git" />
   </component>
 </project>
