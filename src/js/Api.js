@@ -1,15 +1,13 @@
 export class Api {
   constructor(config) {
-    this.url = config.url;
+    this.baseUrl = config.baseUrl;
     this.headers = config.headers;
   }
 
   getUser = () => {
-    return fetch(`${this.url}/users/me`, {
+    return fetch(`${this.baseUrl}/users/me`, {
       headers: this.headers,
     })
-      // Можно лучше
-      // Повторяющийся код разбора ответа ошибки сервера можно вынести в отдельный метод класса.
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -19,7 +17,7 @@ export class Api {
   }
 
   loadingCards() {
-    return fetch(`${this.url}/cards`, {
+    return fetch(`${this.baseUrl}/cards`, {
       headers: this.headers,
     })
       .then((res) => {
@@ -31,7 +29,7 @@ export class Api {
   }
 
   updateProfile(name, about) {
-    return fetch(`${this.url}/users/me`, {
+    return fetch(`${this.baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({

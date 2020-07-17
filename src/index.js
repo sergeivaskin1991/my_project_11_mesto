@@ -1,14 +1,11 @@
-
-
-import {Api} from "./js/Api.js";
-import {Card} from "./js/Card.js";
-import {CardList} from "./js/CardList.js";
-import {FormValidator} from "./js/FormValidator.js";
-import {Popup} from "./js/Popup.js";
-import {AddCardPopup} from "./js/AddCardPopup.js";
-import {UserInfo} from "./js/UserInfo.js";
-
-import './pages/index.css';
+import './pages/index.css'
+import {Api} from "./js/Api"
+import {Card} from "./js/Card"
+import {CardList} from "./js/CardList"
+import {FormValidator} from "./js/FormValidator"
+import {Popup} from "./js/Popup"
+import {AddCardPopup} from "./js/AddCardPopup"
+import {UserInfo} from "./js/UserInfo"
 
 (function () {
 
@@ -44,8 +41,6 @@ import './pages/index.css';
   const imagePopup = document.querySelector('.popup_type_image');
   const imageZoom = document.querySelector('.popup__image');
 
-  // Можно лучше
-  // const { link , name } = formNewMesto.elements;
   const link = formNewMesto.elements.link;
   const name = formNewMesto.elements.name;
 
@@ -74,7 +69,8 @@ import './pages/index.css';
     }
   }
 
-  const api = new Api(config, apiData);
+  const api = new Api(apiData);
+
   const cardsArray = [];
 
   api.getUser()
@@ -145,8 +141,6 @@ import './pages/index.css';
 
   function formEditAdd() {
 
-    // Можно лучше
-    // const { user, about } = userInfo.getUserInfo();
     const getUserAbout = userInfo.getUserInfo();
     formUser.elements.user.value = getUserAbout.user;
     formUser.elements.about.value = getUserAbout.about;
@@ -159,34 +153,5 @@ import './pages/index.css';
   formUser.addEventListener('submit', formAddEdit);
 })();
 
-// Добрый день
-
-// С задачей справились хорошо, код аккуратный и отлично читается.
-
 // ## Итог
 
-// - класс Api реализован согласно поставленной задаче
-// - информация о пользователе  (имя, подпись и аватар) подгружаются с сервера (GET запрос)
-// - имя и о себе можно отредактировать (отправляется PATCH запрос, новые данные)
-// - карточки подгружаются с сервера (GET запрос)
-// - обязательный функционал работает без багов
-// - корректная работа с асинхронным кодом
-// - DOM изменяется только после того, как запрос успешно выполнен
-// - ошибки сервера обрабатываются
-
-// Работа принята
-
-
-// ## Можно лучше
-
-// Большое количество параметров лучше передвать в метод или в конструктор используя деструктуризацию.
-
-// Например в коде:
-// ~~~
-// const newClass = new Class({ windowOne, userForm, popupObj })
-// ~~~
-// А внутри класса:
-// ~~~
-// constructor ({ userForm, popupObj, windowOne }) {...}
-// ~~~
-// И тогда порядок переменных будет неважен, это удобно
