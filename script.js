@@ -21,7 +21,7 @@
     typeMismatch: 'Здесь должна быть ссылка'
   };
   const config = {
-    url: 'https://praktikum.tk/cohort11',
+    url: 'https://nomoreparties.co/cohort11',
     headers: {
       authorization: 'e68fb6ad-453f-4883-819e-2174dfda84ad',
       'Content-Type': 'application/json'
